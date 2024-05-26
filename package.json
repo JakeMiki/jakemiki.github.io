@@ -1,0 +1,10 @@
+{
+    "private": true,
+    "scripts": {
+        "build": "node update-pages.js"
+    },
+    "devDependencies": {
+        "jsdom": "^24.1.0",
+        "prettier": "^3.2.5"
+    }
+}

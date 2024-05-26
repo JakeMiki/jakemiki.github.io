@@ -1,0 +1,152 @@
+/*
+  variables
+*/
+:root {
+    color-scheme: dark light;
+
+    --yellow: #ffbe0b;
+    --orange: #fb5607;
+    --pink: #ff006e;
+    --violet: #8338ec;
+    --blue: #3a86ff;
+    --grey: #808080;
+    --almost-black: #0a0a0a;
+    --almost-white: #fafafa;
+
+    --primary-color: var(--pink);
+    --secondary-color: var(--blue);
+    --text-color: var(--almost-white);
+    --bg-color: var(--almost-black);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: var(--violet);
+        --secondary-color: var(--blue);
+        --text-color: var(--almost-black);
+        --bg-color: var(--almost-white);
+    }
+}
+
+/*
+  main containers
+*/
+body {
+    padding: 0 1ch;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family:
+        system-ui,
+        -apple-system,
+        Helvetica,
+        Arial,
+        sans-serif;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main > div {
+    flex: 1;
+    width: 100%;
+    max-width: 80ch;
+    margin-top: 1rlh;
+}
+
+.main > div > nav > ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    list-style-type: none;
+    gap: 1ch;
+}
+
+.main > footer {
+    color: var(--grey);
+    margin-bottom: 1rlh;
+}
+
+/*
+  other
+*/
+a[href],
+a[href]:active {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a[href]:hover,
+a[href]:focus {
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 2ch;
+    list-style-type: square;
+}
+
+h1::after {
+    content: '_';
+    visibility: hidden;
+    pointer-events: none;
+    animation: blink 2s infinite;
+}
+
+h2 {
+    margin-top: 2rlh;
+}
+
+p {
+    text-align: justify;
+    text-align-last: left;
+    margin: 2ch 0;
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+table > caption {
+    text-align: left;
+    margin-bottom: 1rlh;
+}
+
+.table-horizontal th {
+    width: 0;
+    white-space: nowrap;
+    vertical-align: text-top;
+    padding-right: 1ch;
+    padding-bottom: 1ch;
+}
+
+.table-horizontal td {
+    width: auto;
+    padding-left: 1ch;
+    padding-bottom: 1ch;
+}
+
+.weak {
+    color: var(--grey);
+}
+
+/*
+  animations
+*/
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 0;
+    }
+    51%,
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
