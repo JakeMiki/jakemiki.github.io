@@ -79,7 +79,29 @@ async function updatePage(filepath) {
         console.info(`replacing partial '${partialName}'`);
         const partialNode = getPartial(partialName);
         el.replaceWith(partialNode);
-        dom.window.document.title = title;
+
+        if (partialName === 'head') {
+            dom.window.document.title = title;
+
+            dom.window.document
+                .querySelector('[property="og:title"]')
+                ?.setAttribute('content', dom.window.document.querySelector('h1')?.textContent.trim());
+
+            dom.window.document
+                .querySelector('[property="og:url"]')
+                ?.setAttribute(
+                    'content',
+                    `https://jakemiki.me/${filepath.replace('index.html', '').replaceAll('\\', '/')}`,
+                );
+
+            dom.window.document.querySelector('[property="og:description"]')?.setAttribute(
+                'content',
+                dom.window.document
+                    .querySelector('p')
+                    ?.textContent.trim()
+                    .replaceAll(/[ \n]+/g, ' '),
+            );
+        }
     });
 
     const options = await getPrettierOptions();
