@@ -84,7 +84,7 @@ async function updatePage(filepath) {
 
     const options = await getPrettierOptions();
     const updated = await prettier.format(dom.serialize(), { ...options, parser: 'html' });
-    fs.writeFileSync(filepath, updated);
+    fs.writeFileSync(filepath, updated.replaceAll(/([\w\-])=""/g, '$1'));
 
     console.info(`updating page ${filepath} done.`);
 }

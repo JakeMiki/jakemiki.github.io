@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head data-partial="head">
-        <title>contact - jake's website</title>
+        <title>things - jake's website</title>
 
         <link href="/style.css" rel="stylesheet" />
         <link href="/assets/favicon.ico" rel="icon" />
@@ -30,21 +30,28 @@
 
                 <main>
                     <section>
-                        <h1>contact</h1>
-                        <p>
-                            you can reach me mainly through my
-                            <a href="mailto:avocado-duck-beaver@jakemiki.me">email</a>.
-                        </p>
+                        <h1>things</h1>
+                        <p>a collection of weird little things i've made.</p>
                     </section>
-                    <section>
-                        <h2>other ways</h2>
-                        <p></p>
-                        <ul>
-                            <li><a href="https://github.com/jakemiki">github</a></li>
-                            <li><a href="https://bsky.app/profile/jakemiki.me">bsky</a></li>
-                            <li><a href="https://www.twitch.tv/jakemiki">twitch</a></li>
-                        </ul>
-                        <p></p>
+
+                    <section id="quack">
+                        <h2><a href="#quack">quack</a></h2>
+                        <p>a pet duck. click in the pen to get more ducks. make them run around.</p>
+                        <p>
+                            find out more <a href="https://jakemiki.github.io/quack/">here</a> or on
+                            <a href="https://github.com/jakemiki/quack">github</a>.
+                        </p>
+
+                        <div id="duck-pen" class="border relative resizable">
+                            <div class="border-label">#duck-pen</div>
+                            <pre><code class="html language-html">&lt;script src="https://jakemiki.me/quack/quack.js"
+        data-sprite="https://jakemiki.me/quack/duck.png"
+        data-container="#duck-pen"
+        data-mouse-proximity="64"
+        data-jitter="56"
+        data-click="0"&gt;
+&lt;/script&gt;</code></pre>
+                        </div>
                     </section>
                 </main>
             </div>
@@ -53,7 +60,14 @@
         </div>
 
         <script src="/scripts/favicon.js"></script>
-        <script src="https://jakemiki.me/quack/quack.js" data-sprite="https://jakemiki.me/quack/duck.png"></script>
+        <script
+            src="https://jakemiki.me/quack/quack.js"
+            data-sprite="https://jakemiki.me/quack/duck.png"
+            data-container="#duck-pen"
+            data-mouse-proximity="64"
+            data-jitter="56"
+            data-click="0"
+        ></script>
         <script
             async
             defer

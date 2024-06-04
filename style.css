@@ -15,6 +15,7 @@
 
     --primary-color: var(--pink);
     --secondary-color: var(--blue);
+    --tertiary-color: var(--violet);
     --text-color: var(--almost-white);
     --bg-color: var(--almost-black);
 }
@@ -23,6 +24,7 @@
     :root {
         --primary-color: var(--violet);
         --secondary-color: var(--blue);
+        --tertiary-color: var(--pink);
         --text-color: var(--almost-black);
         --bg-color: var(--almost-white);
     }
@@ -102,6 +104,17 @@ h2 {
     margin-top: 2rlh;
 }
 
+h2 > a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+h2 > a:hover {
+    text-decoration: none;
+}
+h2 > a:hover::after {
+    content: ' 🔗';
+}
+
 p {
     text-align: justify;
     text-align-last: left;
@@ -116,6 +129,35 @@ table {
 table > caption {
     text-align: left;
     margin-bottom: 1rlh;
+}
+
+pre > code {
+    color: var(--tertiary-color);
+}
+
+.resizable {
+    resize: vertical;
+    overflow: scroll;
+}
+
+.relative {
+    position: relative;
+}
+
+.border {
+    margin: 2ch 0;
+    padding: 1ch;
+    border-color: var(--secondary-color);
+    border-width: 1px;
+    border-radius: 1ch;
+    border-style: solid;
+}
+
+.border > .border-label {
+    color: var(--secondary-color);
+    text-align: right;
+    float: right;
+    user-select: none;
 }
 
 .table-horizontal th {
